@@ -1,55 +1,73 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-app>
+        <v-app-bar
+                app
+                flat
+                dense
+        >
+            <v-spacer></v-spacer>
+            <template>
+                <p class="text-center font-weight-black ma-0"
+                   style="font-family: 'Times New Roman',serif; font-size: 20px">Academy of Magic</p>
+                <v-btn-toggle tile color="black" group>
+                    <v-btn text @click="toHome">Home</v-btn>
+                    <v-btn text @click="toAbout">About</v-btn>
+                    <v-btn text>Member</v-btn>
+                    <v-btn text>Access</v-btn>
+                </v-btn-toggle>
+            </template>
+            <v-spacer></v-spacer>
+            <v-btn text>中文</v-btn>
+            <v-spacer></v-spacer>
+        </v-app-bar>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+        <v-main>
+            <v-container fluid>
+                <router-view/>
+            </v-container>
+        </v-main>
 
-      <v-spacer></v-spacer>
+        <v-toolbar padless>
+            <v-card
+                    class="flex"
+                    flat
+                    tile
+            >
+                <v-card-text class="black--text text-center">
+                    <hr>
+                </v-card-text>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+                <v-card-text class="py-2 black--text text-center">
+                    Copyright © {{ new Date().getFullYear() }} <a href="https://judgementh.github.io/">Judgement.</a>
+                    All rights reserved.
+                </v-card-text>
+            </v-card>
+        </v-toolbar>
 
-    <v-main>
-      <router-view/>
-    </v-main>
-  </v-app>
+    </v-app>
 </template>
 
 <script>
 
-export default {
-  name: 'App',
+    export default {
+        name: 'App',
 
-  data: () => ({
-    //
-  }),
-};
+        data: () => ({
+            //
+        }),
+        methods: {
+            toHome() {
+                this.$router.push({path: './'})
+            },
+            toAbout() {
+                this.$router.push({path: './About'})
+            }
+        }
+    };
 </script>
+
+<style xml:lang="scss" scoped>
+    .v-btn {
+        text-transform: none;
+    }
+</style>
