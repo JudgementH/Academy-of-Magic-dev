@@ -3,17 +3,19 @@
         <v-app-bar
                 app
                 flat
-                dense
         >
             <v-spacer></v-spacer>
             <template>
                 <p class="text-center font-weight-black ma-0"
                    style="font-family: 'Times New Roman',serif; font-size: 20px">Academy of Magic</p>
-                <v-btn-toggle tile color="black" group>
+                <v-btn-toggle
+                        group
+                        color="black"
+                        borderless>
                     <v-btn text @click="toHome">Home</v-btn>
-                    <v-btn text @click="toAbout">About</v-btn>
-                    <v-btn text>Member</v-btn>
-                    <v-btn text>Access</v-btn>
+                    <v-btn text @click="toMembers">Members</v-btn>
+                    <v-btn text @click="toPublications">Publications</v-btn>
+                    <v-btn text>Gallery</v-btn>
                 </v-btn-toggle>
             </template>
             <v-spacer></v-spacer>
@@ -61,6 +63,12 @@
             },
             toAbout() {
                 this.$router.push({path: './About'})
+            },
+            toMembers() {
+                this.$router.push({path: './members'})
+            },
+            toPublications(){
+                this.$router.push({path:'./publications'})
             }
         }
     };
@@ -69,5 +77,9 @@
 <style xml:lang="scss" scoped>
     .v-btn {
         text-transform: none;
+    }
+
+    .no-color {
+        background-color: unset;
     }
 </style>

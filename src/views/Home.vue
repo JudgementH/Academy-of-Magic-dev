@@ -1,52 +1,74 @@
 <template>
     <div>
-        <v-container>
-            <v-row
-                    justify="center">
-                <v-col cols="8" align-self="center">
-                    <p class="text-h4">About the Lab</p>
-                    <hr>
-                    <p class="text-body-1">
-                        <strong>Hogwarts School of Witchcraft and Wizardry</strong>, often shortened to Hogwarts, was
-                        the British
-                        wizarding school, located in the Scottish Highlands. It accepted magical students from
-                        Great Britain and Ireland for enrolment. It was a state-owned school, funded by the
-                        Ministry of Magic.
-                    </p>
-                    <p class="text-body-1">
+        <v-row
+                justify="center">
+            <v-col cols="8">
+                <v-row
+                        justify="center">
+                    <v-col align-self="center">
+                        <p class="text-h4">About the Lab</p>
+                        <p class="text-body-1">
+                            <strong>Hogwarts School of Witchcraft and Wizardry</strong>, often shortened to Hogwarts,
+                            was
+                            the British
+                            wizarding school, located in the Scottish Highlands. It accepted magical students from
+                            Great Britain and Ireland for enrolment. It was a state-owned school, funded by the
+                            Ministry of Magic.
+                        </p>
+                        <p class="text-body-1">
 
-                        - 2D/3D Shape and Image Generation, Understanding and Applications (Sketch Generation and
-                        Applications; Non-photorealistic Rendering; Image Editing and Synthesis; Video-based Animation
-                        and Action Generation; Garment Modeling and Virtual Try-on)
-                    </p>
+                            wizarding school, located in the Scottish Highlands. It accepted magical students from
+                            Great Britain and Ireland for enrolment. It was a state-owned school, funded by the
+                            Ministry of Magic.
+                        </p>
 
-                    <p class="text-body-1">
-                        - Intelligent Indoor Spatial Sensing and Its Applications (Visual Indoor Localization;
-                        Geomagnetic Indoor Localization; Multi-modal Fusion-based Indoor Localization; Collaborative
-                        Indoor Localization; Incrementive Reconstruction of Fingerprint Database)
-                    </p>
-                </v-col>
-            </v-row>
+                        <p class="text-body-1">
+                            wizarding school, located in the Scottish Highlands. It accepted magical students from
+                            Great Britain and Ireland for enrolment. It was a state-owned school, funded by the
+                            Ministry of Magic.
+                        </p>
+                    </v-col>
+                </v-row>
 
-            <v-row justify="center">
-                <v-col cols="8">
-                    <p class="text-h4">Main Research Topics</p>
-                    <hr>
+                <v-row>
+                    <v-col cols="4">
+                        <div>
+                            <v-img src="https://cdn.jsdelivr.net/gh/JudgementH/image-host/anime/touhou/youmu.jpg"
+                                   max-width="500"></v-img>
+                            <p class="text-center subtitle-1 font-weight-bold">fig.1</p>
+                        </div>
+                    </v-col>
 
-                </v-col>
-            </v-row>
+                    <v-col cols="4">
+                        <div>
+                            <v-img src="https://cdn.jsdelivr.net/gh/JudgementH/image-host/anime/touhou/youmu.jpg"
+                                   max-width="500"></v-img>
+                            <p class="text-center subtitle-1 font-weight-bold">fig.2</p>
+                        </div>
+                    </v-col>
 
-            <v-row justify="center">
-                <v-col cols="8">
-                    <p class="text-h4">News</p>
-                    <hr>
-                    <ul>
-                        <li>2021-09-30: Hello World!</li>
-                    </ul>
-                </v-col>
-            </v-row>
+                    <v-col cols="4">
+                        <div>
+                            <v-img src="https://cdn.jsdelivr.net/gh/JudgementH/image-host/anime/touhou/youmu.jpg"
+                                   max-width="500"></v-img>
+                            <p class="text-center subtitle-1 font-weight-bold">fig.3</p>
+                        </div>
+                    </v-col>
+                </v-row>
 
-        </v-container>
+                <v-row
+                        justify="center">
+                    <v-col>
+                        <p class="text-h4">News</p>
+                        <ul>
+                            <li v-for="item in news" :key="item.id">{{item}}</li>
+                        </ul>
+                    </v-col>
+                </v-row>
+
+            </v-col>
+        </v-row>
+
     </div>
 </template>
 
@@ -56,5 +78,12 @@
         name: 'Home',
 
         components: {},
+        data: () => ({
+            news: [
+                "2021-10-02: Update",
+                "2021-09-30: Hello World!",
+            ]
+        }),
+        methods: {}
     }
 </script>
